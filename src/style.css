@@ -44,3 +44,64 @@ canvas {
   font-size: 13px;
   opacity: 0.8;
 }
+
+/* 通关弹窗 */
+#win-overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 10;
+}
+#win-overlay.show {
+  display: flex;
+}
+.win-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 36px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  animation: pop 0.25s ease;
+}
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.win-card h2 {
+  font-size: 26px;
+  color: #2e7d32;
+  margin-bottom: 6px;
+}
+.win-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 18px;
+}
+.win-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.win-btns button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  background: #1e88e5;
+  transition: transform 0.1s, filter 0.1s;
+}
+.win-btns button:hover {
+  filter: brightness(1.08);
+}
+.win-btns button:active {
+  transform: scale(0.96);
+}
+.win-btns #btn-next {
+  background: #43a047;
+}
